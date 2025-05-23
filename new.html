@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
-            font-family: Arial, italic;
+            font-family: Arial,sans-serif ;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -52,7 +52,7 @@
             margin-bottom: 30px;
         }
 
-        h4 {
+        .faq-question { 
             font-size: 1.2em;
             color: black;
             margin-bottom: 15px;
@@ -63,9 +63,14 @@
             padding-left: 35px;
             cursor: pointer;
             transition: color 0.3s ease;
+            background: none; 
+            border: none; 
+            width: 100%; 
+            padding-right: 0; 
+            font-family: Arial, sans-serif; 
         }
 
-        h4::before {
+        .faq-question::before {
             content: '+';
             position: absolute;
             left: 0;
@@ -77,14 +82,14 @@
             transition: transform 0.3s ease, color 0.3s ease;
         }
 
-        h4.open::before {
+        .faq-question.open::before {
             content: '-';
             transform: translateY(-50%) rotate(0deg);
             color: #dc3545;
             font-size: 1.4em;
         }
 
-        h4:hover {
+        .faq-question:hover {
             color: #007bff;
         }
 
@@ -114,22 +119,22 @@
     <div class="desktop-container">
     <h1><i class="fa-solid fa-star" style="margin-right: 5px;"></i> FAQs</h1>
 
-        <h4 class="faq-question"><b>What is Frontend Mentor, and how will it help me?</b></h4>
+        <button class="faq-question"><b>What is Frontend Mentor, and how will it help me?</b></button>
         <p class="faq-answer">
             <i class="fa-solid fa-circle-user"></i> Frontend Mentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for all levels and ideal for portfolio building.
         </p>
 
-        <h4 class="faq-question"><b>Is Frontend Mentor free?</b></h4>
+        <button class="faq-question"><b>Is Frontend Mentor free?</b></button>
         <p class="faq-answer">
             <i class="fas fa-dollar-sign"></i> Yes, Frontend Mentor offers a significant number of free challenges. There are also premium challenges and designs available for subscribers.
         </p>
 
-        <h4 class="faq-question"><b>Can I use Frontend Mentor projects in my portfolio?</b></h4>
+        <button class="faq-question"><b>Can I use Frontend Mentor projects in my portfolio?</b></button>
         <p class="faq-answer">
             <i class="fas fa-briefcase"></i> Absolutely! Frontend Mentor encourages you to use completed projects in your portfolio to showcase your skills to potential employers.
         </p>
 
-        <h4 class="faq-question"><b>How can I get help if I'm stuck on a challenge?</b></h4>
+        <button class="faq-question"><b>How can I get help if I'm stuck on a challenge?</b></button>
         <p class="faq-answer">
             <i class="fas fa-hands-helping"></i> Frontend Mentor has a supportive community on Discord and forums where you can ask questions and get help from other developers.
         </p>
@@ -153,7 +158,7 @@
                         q.classList.remove('open');
                     });
 
-                
+                    
                     if (!isOpen) {
                         if (answer && answer.classList.contains('faq-answer')) {
                             answer.style.display = 'block';
